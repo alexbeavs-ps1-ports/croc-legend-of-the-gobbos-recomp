@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Croc - Legend of the Gobbos",
+    "id": "SLUS-00530",
+    "boot_exe": "SLUS_005.30"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "USA",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Croc - Legend of the Gobbos (USA).cue",
+    "bin_name": "Croc - Legend of the Gobbos (USA).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 698767440,
+      "md5": "58e11fca094f2958fc94a429ca2a5c63",
+      "sha1": "caca1a29ca09e5a9f4bc302507590d44fb2e014b",
+      "crc32": "e35a3562"
+    },
+    "disc_fp": "074a7bc3a439c783de0de55d4598c8c825e4dcb86f667bee22df8cb7ebf5c110"
+  },
+  "exe": {
+    "load_address": "0x80100000",
+    "entry_pc": "0x80106B7C",
+    "text_size": "0x00021800",
+    "stack_base": "0x801FFF00"
+  },
+  "seeds": {
+    "count": 191,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK — Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

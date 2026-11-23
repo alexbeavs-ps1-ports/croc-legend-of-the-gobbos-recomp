@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Croc - Legend of the Gobbos"
+id = "SLUS-00530"
+players = 1
+exe = "disc/SLUS_005.30"
+disc = "disc/Croc - Legend of the Gobbos (USA).cue"
+discs = ["disc/Croc - Legend of the Gobbos (USA).cue"]
+disc_serials = ["SLUS-00530"]
+load_address = "0x80100000"
+entry_pc = "0x80106B7C"
+text_size = "0x00021800"
+stack_base = "0x801FFF00"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Croc - Legend of the Gobbos (USA).bin"
+cue_name = "Croc - Legend of the Gobbos (USA).cue"
+boot_exe = "SLUS_005.30"
+known_sizes = [698767440]
+known_md5 = [
+  "58e11fca094f2958fc94a429ca2a5c63",
+]
+known_sha1 = [
+  "caca1a29ca09e5a9f4bc302507590d44fb2e014b",
+]
+known_crc32 = [
+  "e35a3562",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Croc - Legend of the Gobbos Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "074a7bc3a439c783de0de55d4598c8c825e4dcb86f667bee22df8cb7ebf5c110"
